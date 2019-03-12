@@ -909,6 +909,26 @@ class HeaderConstraints(DataModelElement):
             packetLengths=json_dict.get("packetLengths"),
             fragmentOffsets=json_dict.get("fragmentOffsets"))
 
+    @classmethod
+    def from_flow(cls, flow):
+        # type: (Flow) -> HeaderConstraints
+        # Omit applications, since Flow covers that separately and explicitly
+        return HeaderConstraints(
+            srcIps=flow.srcIp,
+            dstIps=flow.dstIp,
+            srcPorts=flow.srcPort,
+            dstPorts=flow.dstPort,
+            ipProtocols=flow.ipProtocol,
+            icmpCodes=flow.icmpCode,
+            icmpTypes=flow.icmpVar,
+            firewallClassifications=flow.state,
+            ecns=flow.ecn,
+            dscps=flow.dscp,
+            packetLengths=flow.packetLength,
+            fragmentOffsets=flow.fragmentOffset,
+        )
+        pass
+
     def dict(self):
         d = super(HeaderConstraints, self).dict()
         # Rename firewallClassifications to flowStates (expected on the backend)
