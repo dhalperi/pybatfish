@@ -927,7 +927,6 @@ class HeaderConstraints(DataModelElement):
             packetLengths=flow.packetLength,
             fragmentOffsets=flow.fragmentOffset,
         )
-        pass
 
     def dict(self):
         d = super(HeaderConstraints, self).dict()
