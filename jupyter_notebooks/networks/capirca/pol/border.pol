@@ -1,0 +1,22 @@
+header {
+  target:: arista border
+  target:: cisco border
+  target:: juniper border
+  target:: paloalto border
+}
+
+term permit_established {
+  protocol:: tcp
+  option:: tcp-established
+  action:: accept
+}
+
+term permit_dns {
+  protocol:: udp
+  destination-port:: DNS
+  action:: accept
+}
+
+term deny_all {
+  action:: reject
+}

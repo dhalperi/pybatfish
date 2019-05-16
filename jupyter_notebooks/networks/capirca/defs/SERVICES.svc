@@ -1,0 +1,4 @@
+SSH = 22/tcp
+DNS = 53/udp
+SMTP = 25/tcp
+       2525/tcp

@@ -1,0 +1,27 @@
+HOST_BITS = 1.2.3.4/8        # some prefix with host bits present
+
+RFC1918_10 = 10.0.0.0/8      # non-public
+
+RFC1918_172 = 172.16.0.0/12  # non-public
+
+RFC1918_192 = 192.168.0.0/16  # non-public
+
+RFC1918 = RFC1918_10
+          RFC1918_172
+          RFC1918_192
+
+LOOPBACK = 127.0.0.0/8
+
+RFC_5737_DOCUMENTATION_BLOCKS = 192.0.2.0/24
+                                198.51.100.0/24
+                                203.0.113.0/24
+
+BGP_SPEAKERS = 203.0.113.16/28 # Public block used for /31s to ISPs
+
+INTERNAL_SERVERS = 203.0.113.36/30   # Corp only, do not expose to Internet
+
+MAIL_SERVERS = 203.0.113.32/29       # IPs allocated for mail servers
+
+OUTLOOK_SERVERS = 203.0.113.32/30    # On-prem Exchange mail servers
+
+WEB_SERVERS = 203.0.113.0/24         # Our main website
